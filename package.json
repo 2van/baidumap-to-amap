@@ -1,0 +1,24 @@
+{
+  "name": "baidumap-to-amap",
+  "version": "1.0.0",
+  "description": "百度地图收藏点转移到高德地图快速方案",
+  "main": "getFromBd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2van/baidumap-to-amap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2van/baidumap-to-amap/issues"
+  },
+  "homepage": "https://github.com/2van/baidumap-to-amap#readme",
+  "dependencies": {
+    "puppeteer": "^8.0.0",
+    "request": "^2.88.2"
+  },
+  "type": "module"
+}

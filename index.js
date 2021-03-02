@@ -9,7 +9,7 @@ import transformData from './transformData.js';
     for (let v of list) {
         let keyword = (v.name || "") + " | " + (v.city || "");
         let data = await transformData(encodeURIComponent(keyword));
-        let succ = data && addDataToAmap({
+        let succ = data && await addDataToAmap({
             'data[0][id]': Date.now() + Math.random().sub,
             'data[0][data][item_id]': Date.now() + String(Math.random()).substr(2, 4),
             'data[0][data][address]': data.address,

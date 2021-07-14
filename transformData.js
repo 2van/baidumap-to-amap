@@ -17,7 +17,7 @@ export default function transformData(keywords) {
             let d = JSON.parse(response.body);
             if (!d.data || !d.data.poi_list) {
                 console.log("query by keywords fail");
-                rs();
+                rs(0);
                 return;
             }
             let pos = d.data.poi_list[0];
@@ -34,7 +34,7 @@ export default function transformData(keywords) {
                 let d = JSON.parse(response.body);
                 if (!d.data) {
                     console.log("get detail fail");
-                    rs();
+                    rs(0);
                     return;
                 }
                 let data = {

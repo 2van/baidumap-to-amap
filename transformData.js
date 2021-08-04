@@ -26,14 +26,16 @@ export default function transformData(keywords) {
                 'method': 'GET',
                 'url': 'https://www.amap.com/detail/get/detail?id=' + pos.id,
                 'headers': {
-                    'Cookie': config.amap
+                    'Cookie': config.amap,
+                    'Referer': 'https://www.amap.com/',
+                    'x-csrf-token': config.amapToken
                 }
             };
             request(options2, function (error, response) {
                 if (error) throw new Error(error);
                 let d = JSON.parse(response.body);
                 if (!d.data) {
-                    console.log("get detail fail");
+                    console.log("get detail fail:" + response.body);
                     rs(0);
                     return;
                 }

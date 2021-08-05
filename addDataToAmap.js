@@ -13,13 +13,18 @@ export default function addDataToAmap(formData) {
             },
             formData
         };
-        request(options, function (error, response) {
-            if (error) throw new Error(error);
-            if (JSON.parse(response.body).status == 1) {
-                rs(1);
-            } else {
-                rs(0);
-            }
-        });
+        try {
+            request(options, function (error, response) {
+                if (error) throw new Error(error);
+                if (JSON.parse(response.body).status == 1) {
+                    rs(1);
+                } else {
+                    rs(0);
+                }
+            });
+        } catch (err) {
+            console.error(err);
+            rs(0);
+        }
     })
 }
